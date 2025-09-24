@@ -1,0 +1,567 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Import Porsche-like Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background: #000;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Main Content */
+.main {
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Estilos para la información de la tienda */
+.product-store {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.modal .product-store {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
+              url('https://fuelcarmagazine.com/wp-content/uploads/2020/09/%C2%A9-Autodromos.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section */
+.section {
+  padding: 4rem 0;
+}
+
+.catalog-section {
+  padding-top: 6rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 100;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: -0.5px;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+/* Search Bar */
+.search-bar {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid #ddd;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  transition: border-color 0.3s ease;
+  border-radius: 0;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 1rem;
+  min-width: 200px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  border-radius: 0;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.filter-select:hover {
+  border-color: #000;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.filter-select:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  color: #999;
+}
+
+/* Brands Grid */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.brand-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover {
+  border-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.brand-card h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.brand-card p {
+  color: #666;
+  font-size: 0.9rem;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  border-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.product-details {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1rem;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.product-description {
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+/* Buttons */
+.btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 0;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.btn-outline:hover {
+  background: #000;
+  color: #fff;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* No Products Message */
+.no-products {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.no-products p {
+  font-size: 1.1rem;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.modal-image {
+  margin: 1rem 0;
+  height: 250px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.modal-buttons .btn {
+  flex: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: 'Porsche Sans', 'Arial Narrow', Arial, 'Heiti SC', SimHei, sans-serif;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .filters {
+    flex-direction: column;
+  }
+  
+  .filter-select {
+    min-width: auto;
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .brand-card {
+    padding: 1.5rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 2rem 0;
+  }
+  
+  .catalog-section {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .brand-card {
+    padding: 1rem;
+  }
+  
+  .product-info {
+    padding: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brand-card,
+.product-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
